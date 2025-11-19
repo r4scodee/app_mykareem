@@ -1,0 +1,1 @@
+// TODO: define base URLs, app constants, color palette
