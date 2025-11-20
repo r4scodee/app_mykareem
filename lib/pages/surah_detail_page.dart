@@ -105,6 +105,7 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          // Ayat Arab
                           Align(
                             alignment: Alignment.centerRight,
                             child: Text(
@@ -117,10 +118,13 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                               ),
                             ),
                           ),
+
                           const SizedBox(height: 6),
+
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              // Nomor ayat
                               Container(
                                 width: 28,
                                 height: 28,
@@ -137,7 +141,10 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                                   ),
                                 ),
                               ),
+
                               const SizedBox(width: 10),
+
+                              // Arti ayat
                               Expanded(
                                 child: Text(
                                   arti,
@@ -148,6 +155,22 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                                   ),
                                 ),
                               ),
+
+                              // ❤️ Icon Favorite
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.redAccent,
+                                ),
+                                onPressed: () {
+                                  // sementara notif dulu
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text("Ditambahkan ke Favorite: Ayat $nomor"),
+                                    ),
+                                  );
+                                },
+                              )
                             ],
                           ),
                         ],
